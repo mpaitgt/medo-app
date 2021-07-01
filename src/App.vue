@@ -1,16 +1,18 @@
 <template>
-  <nav id="nav">
-    <ul>
-      <li>
-        <router-link to="/">Login</router-link>
-      </li>
-      <li>
-        <router-link to="/register">Register</router-link>
-      </li>
-    </ul>
-  </nav>
+  <Navigation />
   <router-view />
 </template>
+
+<script>
+import Navigation from '@/components/layout/Navigation'
+
+export default {
+  name: 'App',
+  components: {
+    Navigation,
+  },
+}
+</script>
 
 <style lang="scss">
 * {
