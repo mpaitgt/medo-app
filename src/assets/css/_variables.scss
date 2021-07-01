@@ -1,1 +1,49 @@
-$test: rgb(209, 69, 69);
+// color
+$blue100: #f0f5ff;
+$blue150: #d4e2ff;
+$blue200: #c9ddff;
+$blue300: #75a8ff;
+$blue400: #6085c4;
+$blue500: #2575ff;
+$blue600: #0a2147;
+$white: #ffffff;
+$gray100: #d6d6d6;
+$gray200: #7c89a1;
+$gray300: #576378;
+$gray400: #445571;
+$black: #21252b;
+$red100: #ffedee;
+$red200: #ff686d;
+$yellow100: #fff8d4;
+$yellow200: #ffe24d;
+$green100: #def7ed;
+$green200: #599d97;
+
+// space 
+$space1: 0.4rem;
+$space2: 0.8rem;
+$space3: 1.2rem;
+$space4: 1.6rem;
+$space5: 2.4rem;
+$space6: 3.2rem;
+$space7: 4.8rem;
+$space8: 6.4rem;
+$space9: 9.6rem;
+$space10: 12.8rem;
+$space11: 19.2rem;
+$space12: 25.6rem;
+$space13: 38.4rem;
+$space14: 51.2rem;
+
+// text size
+$text1: 1.2rem;
+$text2: 1.4rem;
+$text3: 1.6rem;
+$text4: 1.8rem;
+$text5: 2.0rem;
+$text6: 2.4rem;
+$text7: 3.2rem;
+$text8: 4.8rem;
+
+// background gradient
+$bg: linear-gradient(180deg, white, $blue150);
