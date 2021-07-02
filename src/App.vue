@@ -28,7 +28,7 @@ body {
   font-family: Lane, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: rgb(167, 205, 255);
+  background: #a7cdff;
 }
 h1,
 h2,
