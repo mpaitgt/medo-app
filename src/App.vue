@@ -40,6 +40,7 @@ h6 {
   margin-bottom: 2rem;
   margin: 0;
   padding: 0;
+  font-weight: 100;
 }
 p {
   line-height: 1.5;

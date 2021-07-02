@@ -1,6 +1,6 @@
 <template>
   <nav id="nav">
-    <div class="list-wrapper">
+    <div class="list-wrapper" :class="{ open: menuOpen }">
       <ul>
         <li class="li-1">
           <router-link to="/">Login</router-link>
@@ -10,8 +10,7 @@
         </li>
       </ul>
     </div>
-    <!-- :class="{ close: menuOpen }" @click="toggleMenu" for the burger below -->
-    <button class="burger">
+    <button class="burger" @click="handleToggleMenu" :class="{ close: menuOpen }">
       <div class="line line-1"></div>
       <div class="line line-2"></div>
     </button>
@@ -24,21 +23,20 @@ export default {
   data() {
     return {
       menuOpen: false,
-      // any other state values to track
     }
   },
   methods: {
     handleToggleMenu() {
       this.menuOpen = !this.menuOpen
     },
-    // any other methods this component needs
   },
 }
 </script>
 
 <style lang="scss" scoped>
 nav#nav {
-  padding: 20px 0 10px 0;
+  @include flex(row, space-between, center);
+  padding: 20px 20px 10px 20px;
   overflow-y: hidden;
   .list-wrapper {
     display: none;
@@ -58,17 +56,24 @@ nav#nav {
     }
   }
   ul {
-    @include flex(row, space-between, flex-start);
+    @include flex(column, space-between, flex-start);
     list-style-type: none;
     li {
       font-size: 4.2rem;
       padding: 20px;
+      opacity: 0;
+      @for $i from 1 through 3 {
+        &.li-#{$i} {
+          animation: nav-items-enter 500ms ease #{$i / 12}s 1 forwards;
+        }
+      }
       a {
         text-decoration: none;
         font-weight: bold;
-        color: #2c3e50;
+        font-weight: 100;
+        color: #aeaeae;
         &.router-link-exact-active {
-          color: $blue500;
+          color: $blue300;
         }
       }
     }
@@ -100,6 +105,16 @@ div.line {
   &.line-1,
   &.line-2 {
     transition: all 0.4s ease-out;
+  }
+}
+@keyframes nav-items-enter {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
   }
 }
 </style>
