@@ -1,15 +1,22 @@
 <template>
-  <Navigation />
-  <router-view />
+  <div class="page-wrapper">
+    <Navigation />
+    <div class="page">
+      <router-view />
+    </div>
+    <Footer />
+  </div>
 </template>
 
 <script>
 import Navigation from '@/components/layout/Navigation'
+import Footer from '@/components/layout/Footer'
 
 export default {
   name: 'App',
   components: {
     Navigation,
+    Footer,
   },
 }
 </script>
@@ -36,10 +43,6 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: 1;
-  margin-bottom: 2rem;
-  margin: 0;
-  padding: 0;
   font-weight: 100;
 }
 p {
@@ -48,13 +51,12 @@ p {
 ul {
   list-style: none;
   margin: 0;
-  li {
-  }
 }
 #app {
   background: $bg;
   background-attachment: fixed;
-  width: 428px;
+  width: 100%;
+  max-width: 428px;
   height: 100vh;
   margin: 0 auto;
   position: relative;
@@ -69,5 +71,12 @@ ul {
 #app {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+}
+.page-wrapper {
+  @include flex(column);
+  min-height: 100vh;
+}
+.page {
+  flex-grow: 1;
 }
 </style>
