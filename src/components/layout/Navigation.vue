@@ -8,10 +8,10 @@
     />
     <div class="navigation-wrapper" :class="{ open: menuOpen }">
       <ul>
-        <li>
+        <li @click="handleToggleMenu">
           <router-link to="/">Login</router-link>
         </li>
-        <li>
+        <li @click="handleToggleMenu">
           <router-link to="/register">Register</router-link>
         </li>
       </ul>
@@ -131,5 +131,13 @@ button.burger {
 @keyframes nav-items-enter {
   0% { transform: translateX(-50px); opacity: 0; }
   100% { transform: translateX(0px); opacity: 1; }
+}
+
+li {
+  @for $i from 1 through 8 {
+    &:nth-child(#{$i}) {
+      animation: nav-items-enter 500ms ease #{$i / 12}s 1 forwards;
+    }
+  }
 }
 </style>

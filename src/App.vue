@@ -1,9 +1,11 @@
 <template>
   <div class="page-wrapper">
-    <Navigation />
-    <div class="page">
+    <header>
+      <Navigation />
+    </header>
+    <main class="page">
       <router-view />
-    </div>
+    </main>
     <Footer />
   </div>
 </template>
@@ -47,10 +49,15 @@ h6 {
 }
 p {
   line-height: 1.5;
+  margin-top: $space2;
+  margin-bottom: $space2;
 }
 ul {
   list-style: none;
   margin: 0;
+}
+header {
+  width: 100%;
 }
 #app {
   background: $bg;
@@ -78,5 +85,6 @@ ul {
 }
 .page {
   flex-grow: 1;
+  width: 100%;
 }
 </style>
