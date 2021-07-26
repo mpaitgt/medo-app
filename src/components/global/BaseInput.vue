@@ -30,12 +30,12 @@ export default {
     padding: 10px 16px;
     border: none;
     box-shadow: 1px 1px 4px 2px rgba(0,0,0,0.16);
-    border-radius: 14px;
+    border-radius: 20px;
     font-family: inherit;
     letter-spacing: 1px;
     margin-top: 4px;
     outline: none;
-    border: 1px solid $white;
+    border: 1px solid $gray100;
     &:focus {
       background-color: $blue100;
       border-color: $blue400;

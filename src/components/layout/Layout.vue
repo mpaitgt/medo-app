@@ -17,7 +17,7 @@ export default {
 
 <style lang="scss" scoped>
 div.layout {
-  max-width: 85%;
+  max-width: 80%;
   margin: 0 auto;
   .header-wrapper {
     margin-top: $space8;
