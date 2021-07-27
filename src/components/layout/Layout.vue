@@ -1,11 +1,14 @@
 <template>
   <div class="layout">
     <div class="header-wrapper">
-      <slot name="header" />
+      <slot name="head" />
     </div>
     <section>
       <slot name="content" />
     </section>
+    <div class="right-alignment">
+      <slot name="foot" />
+    </div>
   </div>
 </template>
 
@@ -23,5 +26,11 @@ div.layout {
     margin-top: $space8;
     margin-bottom: $space7;
   }
+  .right-alignment {
+  text-align: right;
+  & > div {
+    margin-top: $space6;
+  }
+}
 }
 </style>

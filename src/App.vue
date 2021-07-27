@@ -50,7 +50,7 @@ h6 {
 p {
   line-height: 1.5;
   margin-top: $space2;
-  margin-bottom: $space2;
+  margin-bottom: 0;
 }
 ul {
   list-style: none;
