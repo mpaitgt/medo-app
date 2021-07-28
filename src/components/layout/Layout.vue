@@ -1,7 +1,7 @@
 <template>
   <div class="layout">
     <div class="header-wrapper">
-      <slot name="head" />
+      <slot name="header" />
     </div>
     <section>
       <slot name="content" />

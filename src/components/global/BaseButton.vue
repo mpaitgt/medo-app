@@ -4,7 +4,7 @@
     @click="onClick"
     :cta="cta"
     :variant="variant"
-    :class="[{ cta: cta }, handledVariant]"
+    :class="handledVariant"
   >
     <slot />
   </button>
@@ -29,7 +29,7 @@ export default {
   },
   computed: {
     handledVariant() {
-      switch (this.$props.variant) {
+      switch (this.variant) {
         case "primary":
           return "primary";
         case "secondary":

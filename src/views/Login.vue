@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <template v-slot:head>
+    <template v-slot:header>
       <h1>Login</h1>
     </template>
     <template v-slot:content>
@@ -9,7 +9,6 @@
           placeholder="Enter email..."
           label="Email"
           v-model="email"
-          type="text"
         />
         <BaseInput 
           placeholder="Enter password..."
@@ -19,10 +18,10 @@
         />
         <div class="right-alignment">
           <BaseButton>Login</BaseButton>
-          <!-- <div>
+          <div>
             <p>Need to sign up?</p>
             <router-link to="/register">Register here.</router-link>
-          </div> -->
+          </div>
         </div>
       </form>
     </template>
@@ -40,7 +39,7 @@ export default {
   },
   methods: {
     handleSubmit() {
-      console.log({ email: this.email, password: this.password })
+      console.log(this.$data);
     }
   }
 }
