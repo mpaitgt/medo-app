@@ -65,15 +65,15 @@ export default {
       username: "",
       email: "",
       password: "",
-      password_2: "",
+      confirm_password: "",
       error: "",
     };
   },
   components: {},
   methods: {
     incrementStep() {
-      const filled = this.username && this.email;
-      if (this.step === 1 && filled) {
+      const formFilled = this.username && this.email;
+      if (this.step === 1 && formFilled) {
         this.step = this.step + 1;
       }
     },
@@ -86,8 +86,7 @@ export default {
     handleRegister() {
       const filled = this.password && this.confirm_password;
       const matched = this.password === this.confirm_password;
-      if (this.step === 2 && filled && matched) {
-        this.step = this.step - 1;
+      if (filled && matched) {
         this.error = "";
         // perform form submission
       } else if (!matched) {
