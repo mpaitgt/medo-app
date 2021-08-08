@@ -3,23 +3,53 @@
     <template v-slot:header>
       <h1>Register</h1>
       <p>Try out our watch list for free today and see what you think.</p>
+      <p class="error" v-if="error">{{ error }}</p>
     </template>
     <template v-slot:content>
-      <form @submit.prevent>
+      <form @submit.prevent="handleRegister">
         <div v-if="step === 1">
-          <BaseInput label="Name" placeholder="Enter your name..." v-model="name" />
-          <BaseInput label="Email" placeholder="Enter your email..." v-model="email" />
-          <div class="right-alignment">
-            <BaseButton @click="incrementStep">Continue</BaseButton>
-          </div>
+          <BaseInput
+            label="Username"
+            placeholder="Enter your name..."
+            v-model="username"
+            ref="username"
+            required
+          />
+          <BaseInput
+            label="Email"
+            placeholder="Enter your email..."
+            v-model="email"
+            ref="email"
+            required
+          />
         </div>
         <div v-if="step === 2">
-          <BaseInput label="Password" placeholder="Enter your password..." v-model="password_1" type="password" />
-          <BaseInput label="Confirm password" placeholder="Confirm password..." v-model="password_2" type="password" />
-          <div class="right-alignment">
-            <BaseButton @click="decrementStep" variant="secondary">Back</BaseButton>
-            <BaseButton @click="handleRegister" type="submit">Confirm</BaseButton>
-          </div>
+          <BaseInput
+            label="Password"
+            placeholder="Enter your password..."
+            v-model="password"
+            type="password"
+            required
+          />
+          <BaseInput
+            label="Confirm password"
+            placeholder="Confirm password..."
+            v-model="confirmed_password"
+            type="password"
+            required
+          />
+        </div>
+        <div class="button-wrapper">
+          <BaseButton v-if="step === 1" @click="incrementStep"
+            >Continue</BaseButton
+          >
+          <BaseButton
+            v-if="step === 2"
+            @click="decrementStep"
+            variant="secondary"
+            >Back</BaseButton
+          >
+          <BaseButton v-if="step === 2" type="submit">Confirm</BaseButton>
         </div>
       </form>
     </template>
@@ -28,45 +58,59 @@
 
 <script>
 export default {
-  name: 'Register',
+  name: "Register",
   data() {
     return {
       step: 1,
-      name: '',
-      email: '',
-      password_1: '',
-      password_2: ''
-    }
+      username: "",
+      email: "",
+      password: "",
+      password_2: "",
+      error: "",
+    };
   },
   components: {},
   methods: {
     incrementStep() {
-      if (this.step === 1) {
+      const filled = this.username && this.email;
+      if (this.step === 1 && filled) {
         this.step = this.step + 1;
       }
     },
     decrementStep() {
       if (this.step === 2) {
         this.step = this.step - 1;
+        this.error = "";
       }
     },
     handleRegister() {
-      console.log({
-        name: this.name,
-        email: this.email,
-        password: this.password_1,
-        confirmed_password: this.password_2
-      })
-    }
-  }
-}
+      const filled = this.password && this.confirm_password;
+      const matched = this.password === this.confirm_password;
+      if (this.step === 2 && filled && matched) {
+        this.step = this.step - 1;
+        this.error = "";
+        // perform form submission
+      } else if (!matched) {
+        this.error = "Passwords must match.";
+      }
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-.right-alignment {
+.button-wrapper {
   text-align: right;
   & > div {
     margin-top: $space6;
   }
+}
+.error {
+  display: inline-block;
+  border-radius: 12px;
+  color: darken($red200, 20%);
+  border: 1px solid darken($red200, 20%);
+  background: $red100;
+  padding: $space1 $space3;
 }
 </style>

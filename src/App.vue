@@ -11,16 +11,16 @@
 </template>
 
 <script>
-import Navigation from '@/components/layout/Navigation'
-import Footer from '@/components/layout/Footer'
+import Navigation from "@/components/layout/Navigation";
+import Footer from "@/components/layout/Footer";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Navigation,
     Footer,
   },
-}
+};
 </script>
 
 <style lang="scss">
@@ -33,7 +33,7 @@ html {
   font-size: 62.5%;
 }
 body {
-  font-size: 2.0rem;
+  font-size: 2rem;
   font-family: Lane, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -67,7 +67,7 @@ header {
   height: 100vh;
   margin: 0 auto;
   position: relative;
-  box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.16);
+  box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 0.16);
   overflow: scroll;
 }
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -76,8 +76,8 @@ header {
 }
 /* Hide scrollbar for IE, Edge and Firefox */
 #app {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 .page-wrapper {
   @include flex(column);

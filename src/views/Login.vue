@@ -5,12 +5,8 @@
     </template>
     <template v-slot:content>
       <form @submit.prevent="handleSubmit">
-        <BaseInput 
-          placeholder="Enter email..."
-          label="Email"
-          v-model="email"
-        />
-        <BaseInput 
+        <BaseInput placeholder="Enter email..." label="Email" v-model="email" />
+        <BaseInput
           placeholder="Enter password..."
           label="Password"
           v-model="password"
@@ -30,19 +26,19 @@
 
 <script>
 export default {
-  name: 'Login',
+  name: "Login",
   data() {
     return {
-      email: '',
-      password: '',
-    }
+      email: "",
+      password: "",
+    };
   },
   methods: {
     handleSubmit() {
       console.log(this.$data);
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

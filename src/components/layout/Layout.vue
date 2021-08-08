@@ -14,8 +14,8 @@
 
 <script>
 export default {
-  name: 'Layout',
-}
+  name: "Layout",
+};
 </script>
 
 <style lang="scss" scoped>
@@ -27,10 +27,10 @@ div.layout {
     margin-bottom: $space7;
   }
   .right-alignment {
-  text-align: right;
-  & > div {
-    margin-top: $space6;
+    text-align: right;
+    & > div {
+      margin-top: $space6;
+    }
   }
-}
 }
 </style>

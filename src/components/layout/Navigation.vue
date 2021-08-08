@@ -1,6 +1,6 @@
 <template>
   <nav id="nav" role="navigation" aria-label="Main Navigation">
-    <img 
+    <img
       id="logo"
       src="../../assets/logo.png"
       width="82"
@@ -30,24 +30,24 @@
 
 <script>
 export default {
-  name: 'Navigation',
+  name: "Navigation",
   data() {
     return {
       menuOpen: false,
-    }
+    };
   },
   mounted() {
-    const navItems = document.querySelectorAll('.navigation-wrapper li')
+    const navItems = document.querySelectorAll(".navigation-wrapper li");
     navItems.forEach((item, index) => {
-      item.classList.add(`slide-in-${index + 1}`)
-    })
+      item.classList.add(`slide-in-${index + 1}`);
+    });
   },
   methods: {
     handleToggleMenu() {
-      this.menuOpen = !this.menuOpen
+      this.menuOpen = !this.menuOpen;
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -129,8 +129,14 @@ button.burger {
   }
 }
 @keyframes nav-items-enter {
-  0% { transform: translateX(-50px); opacity: 0; }
-  100% { transform: translateX(0px); opacity: 1; }
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
 }
 
 li {

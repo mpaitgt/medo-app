@@ -15,7 +15,7 @@ export default {
   props: {
     variant: {
       type: String,
-      default: '',
+      default: "",
     },
     onClick: {
       type: Function,
@@ -25,7 +25,7 @@ export default {
       type: Function,
       default: () => {},
     },
-    cta: { type: String, default: '' },
+    cta: { type: String, default: "" },
   },
   computed: {
     handledVariant() {
@@ -39,7 +39,7 @@ export default {
       }
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

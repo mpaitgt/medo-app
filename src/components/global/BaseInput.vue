@@ -6,15 +6,16 @@
       :type="type"
       :value="modelValue"
       :placeholder="placeholder"
+      :required="required"
     />
   </label>
 </template>
 
 <script>
 export default {
-  name: 'BaseInput',
-  props: ['modelValue', 'label', 'placeholder', 'type'],
-}
+  name: "BaseInput",
+  props: ["modelValue", "label", "placeholder", "type", "required"],
+};
 </script>
 
 <style lang="scss" scoped>
@@ -29,7 +30,7 @@ export default {
     font-size: 2rem;
     padding: 10px 16px;
     border: none;
-    box-shadow: 1px 1px 4px 2px rgba(0,0,0,0.16);
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.16);
     border-radius: 20px;
     font-family: inherit;
     letter-spacing: 1px;
